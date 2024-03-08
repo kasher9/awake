@@ -9,9 +9,10 @@ import (
 
 func main() {
 	for {
-		robotgo.Move(0, 0)
-		robotgo.DragSmooth(1, 1, 0.5, 1.0)
-		time.Sleep(60 * time.Second)
+		x0, y0 := robotgo.Location()
+		robotgo.MoveSmooth(0, 0)
+		robotgo.MoveSmooth(x0, y0)
+		time.Sleep(55 * time.Second)
 		fmt.Print(time.Now())
 	}
 }
